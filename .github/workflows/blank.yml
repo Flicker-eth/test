@@ -30,16 +30,16 @@ jobs:
           FILES: |
             a.txt
             b.txt
-      - name: Install Package dependencies
+      - name: Run 1
         run: |
           echo "setp 1 run"
         if: env.GIT_DIFF
-      - name: Check code style
+      - name: Run 2
         # Check only source files with differences
         run: |
           echo "setp 2 run"
         if: env.GIT_DIFF && !env.MATCHED_FILES
-      - name: Check code style
+      - name: Run 3
         # Check only if there are differences in the source code (Run a lint on all files if there are changes to yarn.lock or .eslintrc)
         run: |
           echo "setp 3 run"
