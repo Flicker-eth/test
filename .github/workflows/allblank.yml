@@ -26,5 +26,17 @@ jobs:
       - name: List all changed folders
         run: |
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            echo "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+
             echo "$file was changed"
+                       
+            $diff = git diff --name-only HEAD^ HEAD
+
+            $SourceDiff = $diff | Where-Object { $_ -match '$file/a.json' }
+
+            $HasDiff = $SourceDiff.Length -gt 0
+         
+            echo $HasDiff
+
+            echo "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
           done
