@@ -20,12 +20,7 @@ jobs:
         $dirdiff = git diff --dirstat=files,0 HEAD~1  -- . ':!.github' | sed 's/^[ 0-9.]\+% //g'
 
         #echo  $dirdiff
-
-        for file in $dirdiff; do
-
-          echo "@@ $file was changed"
-
-        done        
+        foreach($file in $dirdiff) {  "@@ $file was changed" }     
 
         # Diff HEAD with the previous commit
         $diff = git diff --name-only HEAD^ HEAD
