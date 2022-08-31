@@ -19,7 +19,7 @@ jobs:
 
         $dirdiff = git diff --dirstat=files,0 HEAD~1
 
-        echo @@ $dirdiff
+        echo  $dirdiff
 
         # Diff HEAD with the previous commit
         $diff = git diff --name-only HEAD^ HEAD
@@ -28,7 +28,7 @@ jobs:
         $SourceDiff = $diff | Where-Object { $_ -match '^docs/' -or $_ -match '.md$' }
         $HasDiff = $SourceDiff.Length -gt 0
 
-        echo @@ $HasDiff
+        echo  $HasDiff
 
         # Set the output named "docs_changed"
         Write-Host "::set-output name=docs_changed::$HasDiff"
