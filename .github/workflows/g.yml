@@ -11,28 +11,27 @@ jobs:
     - uses: actions/checkout@v2
       with:
         # Checkout as many commits as needed for the diff
-        fetch-depth: 0
-    - name: Get changed files
-      id: changed-files
-      uses: tj-actions/changed-files@v29.0.2
-      with:
-        dir_names: "true"    
+        fetch-depth: 2
     - shell: pwsh
       # Give an id to the step, so we can reference it later
       id: check_file_changed
       run: |
-        for (file in ${{ steps.changed-files.outputs.all_changed_files }}); do
-          echo "$file was changed"        
-          # Diff HEAD with the previous commit
-          $diff = git diff --name-only HEAD^ HEAD
 
-          # Check if a file under docs/ or with the .md extension has changed (added, modified, deleted)
-          $SourceDiff = $diff | Where-Object { $_ -match '^$file/a.json' }
-          $HasDiff = $SourceDiff.Length -gt 0
-          echo '@@ ' $HasDiff      
-          # Set the output named "docs_changed"
-          Write-Host "::set-output name=docs_changed::$HasDiff"
-        done  
+        $dirdiff = git diff --dirstat=files,0 HEAD~1
+
+        echo @@ $dirdiff
+
+        # Diff HEAD with the previous commit
+        $diff = git diff --name-only HEAD^ HEAD
+
+        # Check if a file under docs/ or with the .md extension has changed (added, modified, deleted)
+        $SourceDiff = $diff | Where-Object { $_ -match '^docs/' -or $_ -match '.md$' }
+        $HasDiff = $SourceDiff.Length -gt 0
+
+        echo @@ $HasDiff
+
+        # Set the output named "docs_changed"
+        Write-Host "::set-output name=docs_changed::$HasDiff"
 
     # Run the step only with "docs_changed" equals "True"
     - shell: pwsh
