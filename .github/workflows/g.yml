@@ -27,12 +27,12 @@ jobs:
 
         $file = $file + 'a.json'
 
-        echo '##' $file
+        
         # Check if a file under docs/ or with the .md extension has changed (added, modified, deleted)
         $SourceDiff = $diff | Where-Object { $_ -match $file}
         $HasDiff = $SourceDiff.Length -gt 0
 
-        echo $file $HasDiff
+        echo $file + $HasDiff
 
         # Set the output named "docs_changed"
         Write-Host "::set-output name=docs_changed::$HasDiff" }
