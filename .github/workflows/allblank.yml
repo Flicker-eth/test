@@ -1,4 +1,4 @@
-name: CI
+name: new-world
 
 on:
   push:
