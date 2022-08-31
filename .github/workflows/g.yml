@@ -25,8 +25,11 @@ jobs:
         # Diff HEAD with the previous commit
         $diff = git diff --name-only HEAD^ HEAD
 
+        $file = $file + 'a.json'
+
+        echo '##' $file
         # Check if a file under docs/ or with the .md extension has changed (added, modified, deleted)
-        $SourceDiff = $diff | Where-Object { $_ -match $file'a.json'}
+        $SourceDiff = $diff | Where-Object { $_ -match $file}
         $HasDiff = $SourceDiff.Length -gt 0
 
         echo $file $HasDiff
