@@ -30,9 +30,14 @@ jobs:
           
           # Diff HEAD with the previous commit
           $diff = git diff --name-only HEAD^ HEAD
+          $diff1 = git diff --name-only HEAD^ HEAD
+          $diff2 = git diff --name-only HEAD^ HEAD
 
           # Check if a file under docs/ or with the .md extension has changed (added, modified, deleted)
           $SourceDiff = $diff | Where-Object { $_ -match $file2 -and $_ -match $file1 }
+          $SourceDiff1 = $diff1 | Where-Object { $_ -match $file2  }
+          $SourceDiff2 = $diff2 | Where-Object { $_ -match $file1 }
+
           $HasDiff = $SourceDiff.Length -gt 0
 
           Write-Host "$file  $HasDiff" }
