@@ -35,8 +35,7 @@ jobs:
           $SourceDiff = $diff | Where-Object { $_ -match $file -or $_ -match '$file1 }
           $HasDiff = $SourceDiff.Length -gt 0
 
-          Write-Host "$file  $HasDiff"
-          Write-Host "$file1  $HasDiff1" }
+          Write-Host "$HasDiff" }
 
     # Run the step only with "docs_changed" equals "True"
     - shell: pwsh
