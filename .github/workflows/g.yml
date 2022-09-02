@@ -23,7 +23,7 @@ jobs:
         foreach($file in $dirdiff) {  #"@@ $file was changed" }     
 
         # Diff HEAD with the previous commit
-        $diff = git diff --name-only HEAD^ HEAD
+        $diff = git diff --name-only HEAD~1 HEAD
 
         $file = $file + 'a.json'
         $file1 = $file + 'b.json'
@@ -39,7 +39,7 @@ jobs:
         Write-Host  $file1 + $HasDiff1
 
         # Set the output named "docs_changed"
-        Write-Host "::set-output name=docs_changed::$HasDiff" }
+
 
     # Run the step only with "docs_changed" equals "True"
     - shell: pwsh
