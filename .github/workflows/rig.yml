@@ -25,8 +25,8 @@ jobs:
           # Diff HEAD with the previous commit
           
 
-          $file2 = $file + 'a.json'
-          $file1 = $file + 'b.json'
+          $file1 = $file + 'a.json'
+          $file2 = $file + 'b.json'
           
           # Diff HEAD with the previous commit
           $diff = git diff --name-only HEAD^ HEAD
@@ -35,12 +35,16 @@ jobs:
 
           # Check if a file under docs/ or with the .md extension has changed (added, modified, deleted)
           $SourceDiff = $diff | Where-Object { $_ -match $file2 -and $_ -match $file1 }
-          $SourceDiff1 = $diff1 | Where-Object { $_ -match $file2  }
-          $SourceDiff2 = $diff2 | Where-Object { $_ -match $file1 }
+          $SourceDiff1 = $diff1 | Where-Object { $_ -match $file1  }
+          $SourceDiff2 = $diff2 | Where-Object { $_ -match $file2 }
 
           $HasDiff = $SourceDiff.Length -gt 0
+          $HasDiff1 = $SourceDiff1.Length -gt 0
+          $HasDiff2 = $SourceDiff2.Length -gt 0
 
-          Write-Host "$file  $HasDiff" }
+          Write-Host "$file  $HasDiff"
+          Write-Host "$file1  $HasDiff"
+          Write-Host "$file2  $HasDiff" }
 
     # Run the step only with "docs_changed" equals "True"
     - shell: pwsh
