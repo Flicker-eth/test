@@ -1,0 +1,44 @@
+name: demoand
+on:
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  conditional_step:
+    runs-on: 'ubuntu-20.04'
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        # Checkout as many commits as needed for the diff
+        fetch-depth: 2
+    - shell: pwsh
+      # Give an id to the step, so we can reference it later
+      id: check_file_changed
+      run: |
+
+        $dirdiff = git diff --dirstat=files,0 HEAD~1  -- . ':!.github' | sed 's/^[ 0-9.]\+% //g'
+
+        #echo  $dirdiff
+        foreach($file in $dirdiff) {  #"@@ $file was changed" }     
+
+          # Diff HEAD with the previous commit
+          
+
+          $file = $file + 'a.json'
+          $file1 = $file + 'b.json'
+          
+          # Diff HEAD with the previous commit
+          $diff = git diff --name-only HEAD^ HEAD
+
+          # Check if a file under docs/ or with the .md extension has changed (added, modified, deleted)
+          $SourceDiff = $diff | Where-Object { $_ -match $file -and $_ -match $file1 }
+          $HasDiff = $SourceDiff.Length -gt 0
+
+          Write-Host "$HasDiff" }
+
+    # Run the step only with "docs_changed" equals "True"
+    - shell: pwsh
+      # steps.<step_id>.outputs.<output name>
+      if: steps.check_file_changed.outputs.docs_changed == 'True'
+      run: echo publish docs
