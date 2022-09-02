@@ -26,13 +26,17 @@ jobs:
         $diff = git diff --name-only HEAD^ HEAD
 
         $file = $file + 'a.json'
-
+        $file1 = $file + 'b.json'
         
         # Check if a file under docs/ or with the .md extension has changed (added, modified, deleted)
         $SourceDiff = $diff | Where-Object { $_ -match $file}
+        $SourceDiff1 = $diff | Where-Object { $_ -match $file1}
+
         $HasDiff = $SourceDiff.Length -gt 0
+        $HasDiff1 = $SourceDiff1.Length -gt 0
 
         echo $file + $HasDiff
+        echo $file1 + $HasDiff1
 
         # Set the output named "docs_changed"
         Write-Host "::set-output name=docs_changed::$HasDiff" }
