@@ -35,8 +35,8 @@ jobs:
         $HasDiff = $SourceDiff.Length -gt 0
         $HasDiff1 = $SourceDiff1.Length -gt 0
 
-        echo $file + $HasDiff
-        echo $file1 + $HasDiff1
+        Write-Host  $file + $HasDiff
+        Write-Host  $file1 + $HasDiff1
 
         # Set the output named "docs_changed"
         Write-Host "::set-output name=docs_changed::$HasDiff" }
