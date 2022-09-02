@@ -35,11 +35,11 @@ jobs:
         $HasDiff = $SourceDiff.Length -gt 0
         $HasDiff1 = $SourceDiff1.Length -gt 0
 
-        Write-Host  $file + $HasDiff
-        Write-Host  $file1 + $HasDiff1
+        echo $file + $HasDiff
+        echo $file1 + $HasDiff1
 
         # Set the output named "docs_changed"
-
+        Write-Host "::set-output name=docs_changed::$HasDiff" }
 
     # Run the step only with "docs_changed" equals "True"
     - shell: pwsh
