@@ -18,7 +18,6 @@ jobs:
       run: |
 
         $dirdiff = git diff --dirstat=files,0 HEAD~1  -- . ':!.github' | sed 's/^[ 0-9.]\+% //g'
-        $diff = git diff --name-only HEAD~1 HEAD
 
         #echo  $dirdiff
         foreach($file in $dirdiff) {  #"@@ $file was changed" }     
@@ -29,18 +28,15 @@ jobs:
           $file = $file + 'a.json'
           $file1 = $file + 'b.json'
           
-          # Check if a file under docs/ or with the .md extension has changed (added, modified, deleted)
-          $SourceDiff = $diff | Where-Object { $_ -match $file}
-          $SourceDiff1 = $diff | Where-Object { $_ -match $file1}
+          # Diff HEAD with the previous commit
+          $diff = git diff --name-only HEAD^ HEAD
 
+          # Check if a file under docs/ or with the .md extension has changed (added, modified, deleted)
+          $SourceDiff = $diff | Where-Object { $_ -match $file -or $_ -match '$file1 }
           $HasDiff = $SourceDiff.Length -gt 0
-          $HasDiff1 = $SourceDiff1.Length -gt 0
 
           Write-Host "$file  $HasDiff"
-          Write-Host "$file1  $HasDiff1"
-
-          # Set the output named "docs_changed"
-          Write-Host "::set-output name=docs_changed::$HasDiff" }
+          Write-Host "$file1  $HasDiff1" }
 
     # Run the step only with "docs_changed" equals "True"
     - shell: pwsh
