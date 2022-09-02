@@ -44,7 +44,10 @@ jobs:
 
           Write-Host "$file  $HasDiff"
           Write-Host "$file1  $HasDiff"
-          Write-Host "$file2  $HasDiff" }
+          Write-Host "$file2  $HasDiff" 
+          
+          if($HasDiff){Write-Host "$file  $HasDiff"}
+          else{Exit 1}}
 
     # Run the step only with "docs_changed" equals "True"
     - shell: pwsh
