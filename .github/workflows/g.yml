@@ -47,7 +47,8 @@ jobs:
           Write-Host "$file or condition $HasDiff"
           Write-Host "$file or condition $HasDiffand"
           Write-Host "$file1 has changes $HasDiff"
-          Write-Host "$file2 has changes $HasDiff" }
+          Write-Host "$file2 has changes $HasDiff"
+          Write-Host "*******************************" }
           
           #if($HasDiff){Write-Host "$file  $HasDiff"}
           #else{Exit 1}}
