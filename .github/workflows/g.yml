@@ -44,10 +44,10 @@ jobs:
           $HasDiff1 = $SourceDiff1.Length -gt 0
           $HasDiff2 = $SourceDiff2.Length -gt 0
 
-          Write-Host "$file  $HasDiff"
-          Write-Host "$file  $HasDiffand"
-          Write-Host "$file1  $HasDiff"
-          Write-Host "$file2  $HasDiff" }
+          Write-Host "$file or condition $HasDiff"
+          Write-Host "$file or condition $HasDiffand"
+          Write-Host "$file1 has changes $HasDiff"
+          Write-Host "$file2 has changes $HasDiff" }
           
           #if($HasDiff){Write-Host "$file  $HasDiff"}
           #else{Exit 1}}
