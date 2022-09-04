@@ -29,24 +29,20 @@ jobs:
           $diff1 = git diff --name-only HEAD^ HEAD
           $diff2 = git diff --name-only HEAD^ HEAD
 
-          # Check if a file under docs/ or with the .md extension has changed (added, modified, deleted)
+          # Check if a file under dir. has changed (added, modified, deleted)
           $SourceDiff1 = $diff1 | Where-Object { $_ -match $file1  }
           $SourceDiff2 = $diff2 | Where-Object { $_ -match $file2 }
 
           # Get Diff in files HEAD with the previous commit
           $HasDiff1 = $SourceDiff1.Length -gt 0
           $HasDiff2 = $SourceDiff2.Length -gt 0
-
-          # Write output of files
-          Write-Host "$file1 has changes $HasDiff1"
-          Write-Host "$file2 has changes $HasDiff2"
-          
           
           # exit based on condition
-          if( $HasDiff1 -and $HasDiff2 ){Write-Host "$file  $HasDiff"}
+          if( $HasDiff1 ){Write-Host "$file changed"}
           else{Exit 1}
-          
+          if($HasDiff2){Write-Host "$file changed"}
+          else{Exit 1}}
+
           Write-Host "*******************************" }
           
-          #if($HasDiff2){Write-Host "$file  $HasDiff"}
-          #else{Exit 1}}
+
