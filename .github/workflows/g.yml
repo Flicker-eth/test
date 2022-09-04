@@ -11,7 +11,7 @@ jobs:
     - uses: actions/checkout@v2
       with:
         # Checkout as many commits as needed for the diff
-        fetch-depth: 2
+        fetch-depth: 0
     - shell: pwsh
       # Give an id to the step, so we can reference it later
       id: check_file_changed
@@ -24,33 +24,36 @@ jobs:
 
           # Diff HEAD with the previous commit
           
-
           $file1 = $file + 'a.json'
           $file2 = $file + 'b.json'
           
           # Diff HEAD with the previous commit
           $diff = git diff --name-only HEAD^ HEAD
+          $diffand = git diff --name-only HEAD^ HEAD
           $diff1 = git diff --name-only HEAD^ HEAD
           $diff2 = git diff --name-only HEAD^ HEAD
 
           # Check if a file under docs/ or with the .md extension has changed (added, modified, deleted)
           $SourceDiff = $diff | Where-Object { $_ -match $file2 -or $_ -match $file1 }
+          $SourceDiffand = $diff | Where-Object { $_ -match $file2 -and $_ -match $file1 }
           $SourceDiff1 = $diff1 | Where-Object { $_ -match $file1  }
           $SourceDiff2 = $diff2 | Where-Object { $_ -match $file2 }
 
           $HasDiff = $SourceDiff.Length -gt 0
+          $HasDiffand = $SourceDiffand.Length -gt 0
           $HasDiff1 = $SourceDiff1.Length -gt 0
           $HasDiff2 = $SourceDiff2.Length -gt 0
 
           Write-Host "$file  $HasDiff"
+          Write-Host "$file  $HasDiffand"
           Write-Host "$file1  $HasDiff"
-          Write-Host "$file2  $HasDiff" 
+          Write-Host "$file2  $HasDiff" }
           
-          if($HasDiff){Write-Host "$file  $HasDiff"}
-          else{Exit 1}}
+          #if($HasDiff){Write-Host "$file  $HasDiff"}
+          #else{Exit 1}}
 
     # Run the step only with "docs_changed" equals "True"
-    - shell: pwsh
+    #- shell: pwsh
       # steps.<step_id>.outputs.<output name>
-      if: steps.check_file_changed.outputs.docs_changed == 'True'
-      run: echo publish docs
+     # if: steps.check_file_changed.outputs.docs_changed == 'True'
+      #run: echo publish docs
