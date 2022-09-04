@@ -42,8 +42,11 @@ jobs:
           Write-Host "$file2 has changes $HasDiff2"
           Write-Host "*******************************" }
           
-          #if($HasDiff){Write-Host "$file  $HasDiff"}
-          #else{Exit 1}}
+          if($HasDiff1){Write-Host "$file  $HasDiff"}
+          else{Exit 1}
+          
+          if($HasDiff2){Write-Host "$file  $HasDiff"}
+          else{Exit 1}}
 
     # Run the step only with "docs_changed" equals "True"
     #- shell: pwsh
