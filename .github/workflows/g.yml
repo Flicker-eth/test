@@ -37,11 +37,16 @@ jobs:
           $HasDiff1 = $SourceDiff1.Length -gt 0
           $HasDiff2 = $SourceDiff2.Length -gt 0
           
+          Write-Host "$changes detected on folder $file"
           # exit based on condition
           if( $HasDiff1 ){Write-Host "$file1 changed"}
-          else{Exit 1}
+          else{
+            Write-Host "$file1 is not changed"
+            Exit 1}
           if($HasDiff2){Write-Host "$file2 changed"}
-          else{Exit 1}
+          else{
+            Write-Host "$file2 is not changed"
+            Exit 1}
 
           Write-Host "*******************************" }
           
