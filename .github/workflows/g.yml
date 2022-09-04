@@ -19,7 +19,7 @@ jobs:
 
         $dirdiff = git diff --dirstat=files,0 HEAD~1  -- . ':!.github' | sed 's/^[ 0-9.]\+% //g'
 
-        #echo  $dirdiff
+        #looping for each folder change
         foreach($file in $dirdiff) {    
           # Diff HEAD with the previous commit          
           $file1 = $file + 'a.json'
@@ -38,6 +38,7 @@ jobs:
           $HasDiff2 = $SourceDiff2.Length -gt 0
           
           Write-Host "changes detected on folder $file"
+          
           # exit based on condition
           if( $HasDiff1 ){Write-Host "$file1 changed"}
           else{
