@@ -33,23 +33,20 @@ jobs:
           $SourceDiff1 = $diff1 | Where-Object { $_ -match $file1  }
           $SourceDiff2 = $diff2 | Where-Object { $_ -match $file2 }
 
+          # Get Diff in files HEAD with the previous commit
           $HasDiff1 = $SourceDiff1.Length -gt 0
           $HasDiff2 = $SourceDiff2.Length -gt 0
 
-          #Write-Host "$file or condition $HasDiff"
-          #Write-Host "$file and condition $HasDiffand"
+          # Write output of files
           Write-Host "$file1 has changes $HasDiff1"
           Write-Host "$file2 has changes $HasDiff2"
-          Write-Host "*******************************" 
           
-          if($HasDiff1){Write-Host "$file  $HasDiff"}
+          
+          # exit based on condition
+          if( $HasDiff1 -and $HasDiff2 ){Write-Host "$file  $HasDiff"}
           else{Exit 1}
           
-          if($HasDiff2){Write-Host "$file  $HasDiff"}
-          else{Exit 1}}
-
-    # Run the step only with "docs_changed" equals "True"
-    #- shell: pwsh
-      # steps.<step_id>.outputs.<output name>
-     # if: steps.check_file_changed.outputs.docs_changed == 'True'
-      #run: echo publish docs
+          Write-Host "*******************************" }
+          
+          #if($HasDiff2){Write-Host "$file  $HasDiff"}
+          #else{Exit 1}}
