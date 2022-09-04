@@ -38,9 +38,9 @@ jobs:
           $HasDiff2 = $SourceDiff2.Length -gt 0
           
           # exit based on condition
-          if( $HasDiff1 ){Write-Host "$file changed"}
+          if( $HasDiff1 ){Write-Host "$file1 changed"}
           else{Exit 1}
-          if($HasDiff2){Write-Host "$file changed"}
+          if($HasDiff2){Write-Host "$file2 changed"}
           else{Exit 1}
 
           Write-Host "*******************************" }
