@@ -1,1 +1,5 @@
-basic commands;
+docker pull --platform linux/x86_64 mysql
+docker pull --all-tags mysql
+docker stop f8c52bedeecc
+docker restart f8c52bedeecc
+docker rename compassionate_fermi test_db
