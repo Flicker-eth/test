@@ -6,3 +6,4 @@ docker run -d -p 8080:80 ngnix
 docker rm f8c52bedeecc
 docker build -t myimage .
 docker commit -m "hashcode" desktop
+docker stop hf5383921t
