@@ -8,4 +8,3 @@ docker build -t myimage .
 docker start wkjwernjk233
  docker build -t shykes/myapp 
  docker build -t shykes/myapp:1.0.2 -t shykes/myapp:latest .
-kudectl for minidocker
