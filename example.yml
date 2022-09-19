@@ -35,4 +35,5 @@ course:
     mykey: secretvalue
   another:
     mypresonal_key: 45645
-    <<: *adv  #using << is important it is liking importing some value  
+    <<: *adv
+    updated price: *adv  #using << is important it is liking importing some value  
