@@ -1,2 +1,1 @@
-This is file dfgerg
-dfwefwefwe we
+Some yaml file were edited in example.yaml
