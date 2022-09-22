@@ -10,6 +10,7 @@ course:
    -json
    -java
    -javascripts
+   -ruby
   new_target: ["python","java","javascripts","ransom"] 
   teacher_details:
   - name: rahuk
