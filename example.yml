@@ -1,7 +1,7 @@
 course:
   course_name: "devops"
   versio: 1.67
-  price: &price 1999
+  price: &price 2000
   is_public: ture
   relaease_date: 2021-09-23 
   pre-enrol: null
@@ -62,4 +62,3 @@ tages:
    -json jio
    -java object
    -javascripts web dev.
-   
