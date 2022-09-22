@@ -1,1 +1,1 @@
-Some yaml file were edited in example.yaml final code is to be deployed in a sec
+Some yaml file were edited in example.yaml final code is to be deployed.
