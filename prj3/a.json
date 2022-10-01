@@ -1,4 +1,9 @@
-{   
-    "employee":{"name":"John", "age":30, "city":"New York"}
-}
 
+
+{
+    "books": [
+       { "language":"Java" , "edition":"second" },
+       { "language":"C++" , "lastName":"fifth" },
+       { "language":"C" , "lastName":"third" }
+    ]
+ }
