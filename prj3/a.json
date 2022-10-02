@@ -4,6 +4,8 @@
     "books": [
        { "language":"Java" , "edition":"second" },
        { "language":"C++" , "lastName":"fifth" },
-       { "language":"C" , "lastName":"third" }
+       { "language":"C" , "lastName":"third" },
+       {"language":"javascript", "lastName":"latest"}
     ]
  }
+ 
