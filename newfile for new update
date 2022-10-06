@@ -16,3 +16,23 @@ jobs:
       # Give an id to the step, so we can reference it later
       id: check_file_changed
       run: push
+        new_target: ["python","java","javascripts","ransom"] 
+  teacher_details:
+  - name: rahuk
+    email: rgvlog@gmal.com
+    role: devops engineer
+  - name: kunal
+    emial: kunla@kio.com
+    role: under rahul
+  - name: riihu
+    email: jio.com
+    role: junior developer   
+  - {name: "rahul",email: rgvl.com, role: senior developer}
+  shot_desc: >
+    this is a short desc if
+     you are reading it then please go and study
+  long_desc: |
+     rember to make some space so that its know how to work with 
+     you can work on different
+     file ans lines of code 
+  process_price: *price   
