@@ -41,3 +41,10 @@ prgramming language imp:
    -json jio
    -java object
    -javascripts web dev.
+yaml:
+ basic: clear
+ list: clear
+ int: clear
+ bool: clear
+ object: clear
+ customvaluetranfer: clear
