@@ -32,3 +32,13 @@ course:
   tages:
   -cloud
   -@4X08
+  course:
+  course_name: "Google Cloud"
+  version: 2.01
+  price: &prices 3000
+  is-public: ture
+  release-date: 2022-11-12
+  pre-enol: null
+  tages:
+  -cloud
+  -@4X09
