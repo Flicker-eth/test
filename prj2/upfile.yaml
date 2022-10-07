@@ -23,12 +23,12 @@ course:
   -maintain
   -@4X09
 course:
-  course_name: "Sevices"
-  version: 2.67
-  price: &prices 4000
+  course_name: "Aws"
+  version: 2.00
+  price: &prices 9000
   is-public: ture
-  release-date: 2022-10-15
+  release-date: 2022-01-25
   pre-enol: null
   tages:
-  -maintain
-  -@4X09
+  -cloud
+  -@4X08
