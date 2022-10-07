@@ -11,3 +11,24 @@ course:
    -java
    -javascripts
    -ruby
+
+course:
+  course_name: "Sevices"
+  version: 2.67
+  price: &prices 4000
+  is-public: ture
+  release-date: 2022-10-15
+  pre-enol: null
+  tages:
+  -maintain
+  -@4X09
+course:
+  course_name: "Sevices"
+  version: 2.67
+  price: &prices 4000
+  is-public: ture
+  release-date: 2022-10-15
+  pre-enol: null
+  tages:
+  -maintain
+  -@4X09
