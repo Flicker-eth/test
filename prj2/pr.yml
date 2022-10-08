@@ -52,14 +52,3 @@ this:
  version: sdf
  clear: kio
 
-tages:
- -prgramming language:
-   -pythom
-   -json
-   -java
-   -javascripts
- -prgramming language imp:
-   -pythom vip
-   -json jio
-   -java object
-   -javascripts web dev.
