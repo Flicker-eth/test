@@ -31,12 +31,6 @@ course:
     mypresonal_key: 45645
     <<: *adv
     updated price: *adv  #using << is important it is liking importing some value  
-yaml:
- basic: clear
- list: clear
- int: clear
- bool: clear
- object: clear
- customvaluetranfer: clear
+
 
 
