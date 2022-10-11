@@ -36,6 +36,12 @@ course:
    another:
     mypersonal_key: 2342
    <<: *hgu
-  updated price: *hgu 
+  updated price: *hgu
+   adv: &ij7
+    mykey: 56gcer56
+   another:
+    mypersonal_key: 1258
+   <<: *wgy
+  updated price: *wgy 
 
 
