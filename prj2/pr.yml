@@ -43,5 +43,12 @@ course:
     mypersonal_key: 1258
    <<: *wgy
   updated price: *wgy 
+  updated price: *hgu
+   adv: &ytr
+    mykey: 87
+   another:
+    mypersonal_key: 90001
+   <<: *gyt
+  updated price: *gty 
 
 
