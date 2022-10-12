@@ -58,15 +58,4 @@ tages:
    -json
    -java
    -javascripts
- -prgramming language imp:
-   -pythom vip
-   -json jio
-   -java object
-   -javascripts web dev.
- updated price: *hgu
-   adv: &ytr
-    mykey: 87
-   another:
-    mypersonal_key: 90001
-   <<: *gyt
-  updated price: *gty 
+ 
