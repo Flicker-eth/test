@@ -42,11 +42,7 @@ yaml:
  object: clear
  customvaluetranfer: clear
 
-this:
- how: are 
- inst: op
- version: sdf
- clear: kio
+
 
 tages:
  -prgramming language:
