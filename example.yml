@@ -1,5 +1,5 @@
 course:
-  course_name: "devops"
+  course_name: "devops roadmap"
   versio: 1.67
   price: &price 2000
   is_public: ture
