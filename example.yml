@@ -1,5 +1,5 @@
 course:
-  course_name: "devops roadmap"
+  course_name: "devops yaml"
   versio: 1.67
   price: &price 2000
   is_public: ture
@@ -15,7 +15,7 @@ course:
   - name: kunal
     emial: kunla@kio.com
     role: under rahul
-  - name: riihu
+  - name: rahul this is edited 
     email: jio.com
     role: junior developer   
   - {name: "rahul",email: rgvl.com, role: senior developer}
