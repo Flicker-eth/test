@@ -10,7 +10,7 @@ course:
   new_target: ["python","java","javascripts","ransom"] 
   teacher_details:
   - name: rahuk
-    email: rgvlog@gmal.com
+    email: rgvlog786@gmail.com
     role: devops engineer
   - name: kunal
     emial: kunla@kio.com
@@ -31,7 +31,7 @@ course:
   adv: &adv 
     mykey: secretvalue
   another:
-    mypresonal_key: 45645
+    mypresonal_key: 56735
     <<: *adv
     updated price: *adv  #using << is important it is liking importing some value  
 yaml:
