@@ -15,8 +15,8 @@ course:
   - name: kunal
     emial: kunla@kio.com
     role: under rahul
-  - name: rahul this is edited 
-    email: jio.com
+  - name: kamlesh 
+    email: kam.em@gamil.com
     role: junior developer   
   - {name: "rahul",email: rgvl.com, role: senior developer}
   shot_desc: >
