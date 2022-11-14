@@ -17,11 +17,14 @@ course:
     role: under rahul
   - name: kamlesh 
     email: kam.em@gamil.com
-    role: junior developer   
+    role: junior developer 
+  - name: Ayush
+    email: Ayush.em@gamil.com
+    role: Associate developer 
   - {name: "rahul",email: rgvl.com, role: senior developer}
   shot_desc: >
-    this is a short desc if
-     you are reading it then please go and study
+    this is a short desc
+     
   long_desc: |
      rember to make some space so that its know how to work with 
      you can work on different
@@ -33,7 +36,7 @@ course:
   another:
     mypresonal_key: 56735
     <<: *adv
-    updated price: *adv  #using << is important it is liking importing some value  
+    updated price: *adv   
 yaml:
  basic: clear
  list: clear
