@@ -3,7 +3,7 @@ course:
   versio: 1.67
   price: &price 2000
   is_public: ture
-  relaease_date: 2022-09-26 
+  relaease_date: 2022-11-16
   pre-enrol: null
   tages:
    -programming
