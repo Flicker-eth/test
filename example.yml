@@ -3,13 +3,13 @@ course:
   versio: 1.67
   price: &price 2100
   is_public: ture
-  relaease_date: 2022-10-26
+  relaease_date: 2022-10-28
   pre-enrol: null
   tages:
    -programming
   new_target: ["python","java","javascripts","ransom"] 
   teacher_details:
-  - name: rahuk
+  - name: rahul
     email: rgvlog786@gmail.com
     role: devops engineer
   - name: kunal
