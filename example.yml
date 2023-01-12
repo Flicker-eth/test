@@ -3,7 +3,7 @@ course:
   versio: 1.67
   price: &price 2100
   is_public: ture
-  relaease_date: 2023-01-09 'Happy new Year 2023'
+  relaease_date: 2023-01-12 'Happy new Year 2023'
   pre-enrol: null
   tages:
    -programming
